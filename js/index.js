@@ -1,0 +1,61 @@
+$(function(){
+	
+	//导航动画效果
+	$("#nav li").hover(
+		function(){
+			$(this).addClass("sfhover");
+			$(this).siblings().removeClass("sfhover");
+			$(this).children().find("b").animate({
+				top:"18px"
+			},300);
+			$(this).children().find("span").animate({
+				top:"-30px"
+			},300)
+		},
+		function(){
+			$(this).removeClass("sfhover");
+			$(this).children().find("b").animate({
+				top:"0px"
+			},300);
+			$(this).children().find("span").animate({
+				top:"0px"
+			},300)
+		}
+	);
+	
+	//婚纱风格动画效果
+	$(".style_main_img").hover(
+		function(){
+			console.log($(this).children('img'));
+			$(this).children('img').animate({
+				opacity:"0.3",
+				backgroundColor:"#000"
+			},300);
+			$(this).children('span').animate({
+				top:"0px"
+			},300);
+			$(this).children('p').animate({
+				bottom:"14px"
+			},300)
+		},
+		function(){
+			$(this).children('img').animate({
+				opacity:"1"
+			},300);
+			$(this).children('span').animate({
+				top:"-276px"
+			},300);
+			$(this).children('p').animate({
+				bottom:"-27px"
+			},300)
+		}
+	);
+	
+	//品牌实力切换效果
+	$(".power_main li").hover(
+		function(){
+			$(this).addClass("active");
+			$(this).siblings().removeClass("active");
+		}
+	);
+})
